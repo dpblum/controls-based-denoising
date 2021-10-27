@@ -3,14 +3,14 @@ def code_closed_form(R,coeff,b):
     # non-pathological variance (NPV-patterns).
     # 
     # INPUT:
-    # R:    n*p matix with n observations and p dimensions (e.g. healthy controls images) 
-    # res:  struct output from code_npv_patterns.m that contains NPV-patterns (res.coeff).
-    # b:    pathological read-out pattern before CODE.
+    # R:     n*p matrix with n observations and p dimensions (e.g. healthy controls images) 
+    # coeff: patterns of non-pathological variance
+    # b:     pathological read-out pattern
     # 
     # OUTPUT: 
     # Optimal weights of patterns of non-pathological variance.
 
-    # centering R allows using norm
+    # centering R allows using norm-function
     R = R - np.mean(R,axis=0,keepdims=True)
 
     s     = coeff.shape[1]
